@@ -3,6 +3,7 @@ package com.library.management.controller;
 import java.util.List;
 
 
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +32,7 @@ public class BookController {
 	@GetMapping("/isBookInStock")
 	public Boolean isBookInStock(@RequestBody Book b)
 	{
-		
+		return null;
 	}
 	
 	@PostMapping("/addBook")
