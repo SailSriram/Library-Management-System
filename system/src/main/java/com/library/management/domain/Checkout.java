@@ -8,7 +8,7 @@ import lombok.Getter;
 @Getter
 @Builder
 public class Checkout {
-	private User u;
+	private User user;
 	private Book book;
 	private LocalDate dueDate;
 	private boolean isOverdue;

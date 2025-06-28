@@ -1,5 +1,6 @@
 package com.library.management.service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,6 +13,10 @@ import com.library.management.domain.User;
 public class UserService {
     private List<User> libraryUsers;
 
+    public UserService() {
+        this.libraryUsers = new ArrayList<>();
+    }
+
     public boolean checkIfUserIsMember(String username) {
         return libraryUsers.stream().anyMatch(t -> t.getUsername().equals(username));
     }
@@ -21,7 +26,7 @@ public class UserService {
             return ResponseEntity.badRequest().body("Username already exists! Create another one");
         }
         libraryUsers.add(User.builder().username(username).password(password).id(1).build());
-        return ResponseEntity.badRequest().body("User created!");
+        return ResponseEntity.ok().body("User created!");
 
         // We will check if the username already exists in
         // the system
